@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head'); %>
+  </head>
+  <body>
+    <header><%- include('./partials/header'); %></header>
+    <form action="" method="POST">
+      <label for="firstname">First name</label>
+      <input
+        type="text"
+        placeholder="First name"
+        name="first_name"
+        id="firstname"
+      />
+      <label for="lastname">Last name</label>
+      <input
+        type="text"
+        placeholder="Last name"
+        name="last_name"
+        id="lastname"
+      />
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" name="username" id="username" />
+      <label for="email">Email</label>
+      <input type="email" placeholder="Email" name="email" id="email" />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        id="password"
+      />
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        placeholder="Confirm password"
+      />
+      <button type="submit">create account</button>
+    </form>
+    <p><%= err_msg %></p>
+  </body>
+</html>

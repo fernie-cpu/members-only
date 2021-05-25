@@ -1,0 +1,47 @@
+<%- include('./partials/head'); %>
+  <body>
+    <header><%- include('./partials/header'); %></header>
+    <% if (user) {%>
+    <p>Sup <%= user.first_name %></p>
+    <a href="/create-post">create post</a> | <a href="/admin">become an admin</a> | <a href="/logout">log out</a>
+    <% } else { %>
+    <div><a href="/sign-up">Sign Up</a> | <a href="/login">Log In</a></div>
+    <% } %>
+
+    <% for (let i = 0; i < results.length; i++) {
+      if (user) { 
+        if (user.admin) { %>
+        <div>
+          <div><span>Title:</span> <%= results[i].title%></div>
+          <div><span>Message</span> <%= results[i].message%></div>
+          <div><span>By</span> <%= results[i].user.username%></div>
+          <div><span></span> <%= results[i].time%></div>
+        </div>
+          <div>
+            <form action="" method="POST">
+              <input type="hidden" value="<%= results[i]._id %>" name="delete" id="delete">
+              <button>delete post</button>
+            </form>
+          </div>
+        </div>
+        <br />
+    <% } else { %>
+      <div>
+          <div><span>Title:</span> <%= results[i].title%></div>
+          <div><span>Message</span> <%= results[i].message%></div>
+          <div><span>By</span> <%= results[i].user.username%></div>
+          <div><span></span> <%= results[i].time%></div>
+      </div>
+      <br />
+     <% }
+      } else { %>     
+        <div>
+          <div><span>Title:</span> <%= results[i].title%></div>
+          <div><span>Message</span> <%= results[i].message%></div>
+          <div><span>By</span> Jeff</div>
+        </div>
+        <br />
+      <% }
+       } %>
+  </body>
+</html>

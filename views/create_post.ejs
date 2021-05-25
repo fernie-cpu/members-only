@@ -1,0 +1,23 @@
+<%- include('./partials/head') %>
+  <body>
+    <header>
+      <h2><%= title %></h2>
+    </header>
+    <main>
+      <form action="" method="POST">
+        <label for="title">title</label>
+        <input type="text" name="title" id="title" />
+        <br />
+        <label for="message">create post</label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+        <button type="submit">post</button>
+      </form>
+    </main>
+  </body>
+</html>
